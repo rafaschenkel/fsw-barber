@@ -15,7 +15,7 @@ const Header = () => {
 					width={120}
 				/>
 				<Button variant={"outline"} size={"icon"}>
-					<MenuIcon />
+					<MenuIcon size={20} />
 				</Button>
 			</CardContent>
 		</Card>
