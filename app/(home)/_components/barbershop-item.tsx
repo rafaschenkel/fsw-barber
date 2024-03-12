@@ -1,6 +1,8 @@
+import { Badge } from "@/app/_components/ui/badge";
 import { Button } from "@/app/_components/ui/button";
 import { Card, CardContent } from "@/app/_components/ui/card";
 import { Barbershop } from "@prisma/client";
+import { StarIcon } from "lucide-react";
 import Image from "next/image";
 
 interface barbershopItemProps {
@@ -12,6 +14,15 @@ const BarbershopItem = ({ barbershop }: barbershopItemProps) => {
 		<Card className="min-w-[167px] max-w-[167px] rounded-2xl">
 			<CardContent className="p-0 px-1 pt-1 flex flex-col gap-2">
 				<div className="w-full h-[159px] relative">
+					<div className="absolute top-1 left-1 z-50">
+						<Badge
+							variant={"secondary"}
+							className="flex items-center gap-1 justify-center bg-slate-800 backdrop-blur-[6px] bg-opacity-70"
+						>
+							<StarIcon size={10} className="fill-primary text-primary" />
+							<span className="text-xs">5,0</span>
+						</Badge>
+					</div>
 					<Image
 						alt={barbershop.name}
 						src={barbershop.imageUrl}
@@ -19,6 +30,7 @@ const BarbershopItem = ({ barbershop }: barbershopItemProps) => {
 							objectFit: "cover",
 						}}
 						fill
+						sizes="h-[159px] w-[159px]"
 						className="rounded-2xl"
 					/>
 				</div>
